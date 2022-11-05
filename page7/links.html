@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Sim's Cake Town</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../style.css" media="screen">
+<link rel="icon" type="image/x-icon" href="../pic/tabicon.png">
+<!--ICON USAGE-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+<!--JQUERY -->
+$(document).ready(function()  {
+$('#more').click(function(){
+	$('#details').slideToggle('slow');
+	});
+});
+</script>
+
+<style>
+*{box-sizing:border-box;}
+#cake12{display:none;}
+#details { display: none; }
+main a{text-decoration:none;}
+.Link h1{margin-top:0;}
+.Link p{ font-style:italic; font-weight:700; font-size:27px;}
+table{margin-left:auto; margin-right:auto; width:80%;  }
+table td{padding:10px; text-align:center;}
+table tr:nth-of-type(odd) {
+  background:#FFE4E1;
+}
+table p{font-size:23px; font-weight:500; font-style:italic;}
+
+<!--IMAGE GALLERY CSS-->
+#gallery { position: relative; text-align:center;}
+figure { position: absolute;
+		top:1203px;
+         left: 669px;
+		 text-align: center;
+		 opacity: .25; }
+#gallery ul { width: 500px; 
+              list-style-type: none;
+}
+#gallery li { display: inline; 
+              float: left;
+			  padding: 8px;
+}
+#gallery img { border-style: none; }
+#gallery a { color: black;
+             text-decoration: none; 
+			 font-style: italic;
+}
+#gallery span { position: absolute; 
+                left: -1000px;
+				opacity: 0;
+                transition: opacity 3s ease-in-out; 
+}
+#gallery a:hover span { position: absolute;
+						left: 710px;
+                        text-align: center; 
+						opacity: 1;
+						top: 1220px; 
+						bottom:5px;
+}
+
+<!--ICON CSS-->
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+.fa-facebook {
+	border-radius: 50%;
+	height:37px;
+	width:43px;
+	background: #3B5998;
+	color: white;
+	padding:5px 2px 0 2px;
+}
+.fa-instagram {
+	border-radius: 50%;
+	height:35px;
+	width:45px;
+	background: #125688;
+	color: white;
+	padding:5px 2px 0 2px;
+}
+.fa-twitter {
+	border-radius: 50%;
+	height:37px;
+	width:43px;
+	background: #55ACEE;
+	color: white;
+	padding:5px 2px 0 2px;
+}
+</style>
+</head>
+
+<body>
+<div id="container">
+<header><h1>Sim's Cake Town</h1></header>
+
+<nav class="left">
+
+<ul>
+<li><a href="../page1/index.html">Home Page</a></li>
+<li><a href="../page2/about.html">About Us</a></li>
+<li><a href="../page3/menu.html">Menu</a></li>
+<li><a href="../page4/adver.html">Advertisement</a></li>
+<li><a href="../page5/videos.html">Videos</a></li>
+<li><a href="../page6/form.html">Form</a></li>
+<li><a href="links.html">Links</a></li>
+<li><a href="../page8/authors.html">Author</a></li>
+<li><a href="../page9/doc.html">Documentation</a></li>
+</ul>
+
+<!--From W3-->
+<p style="padding-left:10px;">TIME: </p>
+<p id="demo"></p>
+
+<script>
+setInterval(myTimer, 1000);
+
+function myTimer() {
+  const d = new Date();
+  document.getElementById("demo").innerHTML = d.toLocaleTimeString();
+}
+</script>
+
+</nav>
+
+<aside>
+	
+	<div class="right">
+	<h3 style="text-align:center;">Promotion</h3>
+	<img src="../pic/buy1free1.png" width="200px" height="200px">
+	
+	<!--From Google Embed Code-->
+	<h3 style="text-align:center;">Our Location</h3>
+	<div class="mapouter"><div class="gmap_canvas"><iframe width="200" height="200" id="gmap_canvas"
+	src="https://maps.google.com/maps?q=Jln%20Kiambang%2014,%20Bandar%20Indahpura,%2081000%20Kulai,%20Johor&t=&z=11&ie=UTF8&iwloc=&output=embed" 
+	frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://putlocker-is.org">putlocker</a><br>
+	<style>.mapouter{position:relative;text-align:right;height:200px;width:200px;}</style><a href="https://www.embedgooglemap.net">google maps embedded</a>
+	<style>.gmap_canvas {overflow:hidden;background:none!important;height:200px;width:200px;}</style></div></div>
+
+	<address style="padding:10px;">
+	Visit us at:<br>
+	Jln Kiambang 14,<br>
+	Bandar Indahpura, <br>
+	81000 Kulai, <br>
+	Johor
+	<br>Business hours:<br>
+	Daily hours 8am to 8pm
+</address>
+	</div>
+</aside>
+
+<main>
+	<!--LINK TO OTHER RELATED Websites-->
+	<div class="Link" style="text-align:center; background-color:#E0FFFF">
+	<h1 style="padding-top:10px;"><i>Links</i></h1>
+	<h2><p>Visit us on&nbsp;<a href="https://www.facebook.com/SUCAssignmentCakeTown/" class="fa fa-facebook" target="_blank"></a>&nbsp;to contact us easilly.</p>
+	<p style="font-size:23px;">On our's Facebook, you also can get our location.</p>
+	<p>Visit us on&nbsp;<a href="https://www.instagram.com/suc2021cassignment/" target="_blank" class="fa fa-instagram"></a>&nbsp;to see our design.</p>
+	<p style="font-size:23px;">On our's Instagram, <br>you can see more details about our products.</p>
+	<p>Visit us on&nbsp;<a href="https://twitter.com/SUC2021CProject" target="_blank" class="fa fa-twitter"></a>&nbsp;to contact us urgent.</p>
+	<p style="font-size:23px;">On our's Twitter, <br>you can contact us if emergency.</p>
+	</h2><br></div><br>
+	
+	
+	<!--THUMBNAIL IMAGE TO DOWNLOAD IMAGE FILE-->
+	<table>
+	<caption style="padding:10px; font-size:30px; font-style:italic; font-weight:700;">Games</caption>
+	<tr><td width="250">
+	<a href="img.zip">
+	<img id="cake" src="img/tabicon.png" width="100" height="100">
+	</a><p>Click the Cake to download the <a href="#" id="more">Suprise.</a><div id="details">
+	<p>The cake have a lot of picture about cake.</p></div></p>
+	</td>
+	
+	<td width="250">
+	<img id="cake12" src="img/img2b.png" width="210" height="210" style="background-size:cover;">
+	<p>The Most Popular Cake:</p>
+
+	<!--CANVAS ELEMENT AND J QUERY CAPTION PLUG IN-->
+	<canvas id="myCanvas" width="190" height="190"
+	style="border:1px solid #d3d3d3; padding:5px;">
+	Your browser does not support the HTML5 canvas tag.
+	</canvas>
+	
+	<p><button onclick="myCanvas()">Ans&#127942;</button>
+
+	<script>
+	function myCanvas() {
+	  var c = document.getElementById("myCanvas");
+	  var ctx = c.getContext("2d");
+	  var img = document.getElementById("cake12");
+	  ctx.drawImage(img,10,10);
+	}
+	</script>
+	</td></tr>
+	</table><br>
+	
+	<!--IMAGE GALLERY-->
+	<h2 style="text-align:center;"><I>IMAGE GALLERY</I></h2>
+
+<div id="gallery" style="margin-left:auto; margin-right:auto; width:90%;">
+ <figure>
+  <img src="../page3/img/img1a.jpg" width="200" height="200" alt="Golden Gate Bridge">
+ </figure>
+ <ul>
+   <li><a href="../page3/img/img1a.jpg" target="_blank"><img src="../page3/img/img1b.png" width="120" height="100" alt="Hershey Chocolate Cake">
+   <span><img src="../page3/img/img1b.png"  width="200" height="200"
+      alt="Hershey Chocolate Cake"><br>Hershey Chocolate Cake</span></a>
+   </li>
+  <li><a href="../page3/img/img2a.jpg" target="_blank"><img src="../page3/img/img2b.png" width="120" height="100" alt="Japanese Strawberry Cake">
+    <span><img src="../page3/img/img2b.png" width="200" height="200" alt="Japanese Strawberry Cake"><br>Japanese Strawberry Cake</span></a>
+  </li>
+  <li><a href="../page3/img/img3a.png" target="_blank"><img src="../page3/img/img3b.png" width="120" height="100" alt="Muscat Favourite Grapes Cake">
+    <span><img src="../page3/img/img3b.png" width="200" height="200" alt="Muscat Favourite Grapes Cake"><br>Muscat Favourite <br>Grapes Cake</span></a>
+  </li>
+  <li><a href="../page3/img/img4a.jpg" target="_blank"><img src="../page3/img/img4b.png" width="120" height="100" alt="Banana Cake Cream Cheese Frosting">
+    <span><img src="../page3/img/img4b.png" width="200" height="200" alt="Banana Cake Cream Cheese Frosting"><br>Banana Cake Cream<br> Cheese Frosting</span></a>
+  </li>
+  <li><a href="../page3/img/img5a.jpg" target="_blank"><img src="../page3/img/img5b.png" width="120" height="100" alt="Lychee Cake with Pink Biscuits">
+    <span><img src="../page3/img/img5b.png" width="200" height="200" alt="Lychee Cake with Pink Biscuits"><br>Lychee Cake with<br> Pink Biscuits</span></a>
+  </li>
+  <li><a href="../page3/img/img6a.jpg" target="_blank"><img src="../page3/img/img6b.png" width="120" height="100" alt="Cookies Cream and Oreo Cake">
+    <span><img src="../page3/img/img6b.png" width="200" height="200" alt="Cookies Cream and Oreo Cake"><br>Cookies Cream and<br> Oreo Cake</span></a>
+  </li>
+  <li><a href="../page3/img/img7a.jpg" target="_blank"><img src="../page3/img/img7b.png" width="120" height="100" alt="Brown Derby Grapefruit Cake">
+    <span><img src="../page3/img/img7b.png" width="200" height="200" alt="Brown Derby Grapefruit Cake"><br>Brown Derby <br>Grapefruit Cake</span></a>
+  </li>
+  <li><a href="../page3/img/img8a.jpg" target="_blank"><img src="../page3/img/img8b.png" width="120" height="100" alt="Coconut Cheese cake">
+    <span><img src="../page3/img/img8b.png" width="200" height="200" alt="Coconut Cheese cake"><br>Coconut <br>Cheese cake</span></a>
+  </li>
+  <li><a href="../page3/img/img9a.jpg" target="_blank"><img src="../page3/img/img9b.png" width="120" height="100" alt="Pork Floss Cake">
+    <span><img src="../page3/img/img9b.png" width="200" height="200" alt="Pork Floss Cake"><br>Pork Floss <br>Cake</span></a>
+  </li>
+ </ul>
+</div><br><br>
+
+<div style="float:left; clear:both;"><a href="#container" style="text-decoration:none;"><h2 style="padding:15px;"><I><B>Back To The Top&nbsp;&#10084;</I></B></h2></a>
+	&nbsp;</div>
+<footer>
+	<p>Copyright &copy 2022 The Sim Group Project Teams. All right reserved.
+	<br>
+	All text, ideas and graphics found at this site are copyrighted by the author and<br> may not used for any purpose other than those specified or allowed by 
+	the author.
+	<br><br>
+	This website was designed by The Sim Group Project Teams.
+	</p>
+</footer>
+</main>
+
+</div> 
+</body>
+</html>

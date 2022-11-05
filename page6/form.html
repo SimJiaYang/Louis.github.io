@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Sim's Cake Town</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../style.css" media="screen">
+<link rel="icon" type="image/x-icon" href="../pic/tabicon.png">
+<style>
+	  html, body {
+      min-height: 100%;
+      }
+      form, input, select, textarea, p { 
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 14px;
+      color: #666;
+      line-height: 22px;
+      }
+	  input[type="checkbox"] {
+	  width: 17px;
+      height: 17px;
+      vertical-align: top;
+	  }
+      label.checkbox {
+      vertical-align: top;
+      line-height: 24px;
+      margin: 2px 0;
+      display: block;
+      height: 24px;
+	  }
+	  th, td {
+      width: 21%;
+      padding: 15px 0;
+      border-bottom: 1px solid #ccc;
+      text-align: center;
+      vertical-align: unset;
+      line-height: 18px;
+      font-weight: 400;
+      word-break: break-all;
+      }
+      .first-col {
+      width: 16%;
+      text-align: left;
+      }
+      table {
+      width: 100%;
+      }
+	  button {
+      width: 150px;
+      padding: 10px;
+      border: none;
+      -webkit-border-radius: 5px; 
+      -moz-border-radius: 5px; 
+      border-radius: 5px; 
+      background-color: #095484;
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer;
+      }
+      button:hover {
+      background-color: #0666a3;
+      }
+      h1 {
+      position: absolute;
+      margin: 0;
+      font-size: 32px;
+      color: #fff;
+      z-index: 2;
+      }
+      .testbox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: inherit;
+      padding: 20px;
+      }
+      form {
+      width: 100%;
+      padding: 20px;
+      border-radius: 6px;
+      background: #fff;
+      box-shadow: 0 0 30px 0 #8ebf42; 
+      }
+      .banner {
+      position: relative;
+      height: 100px;  
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      }
+      .banner::after {
+      content: "";
+      background-color: rgba(0, 0, 0, 0.5); 
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      }
+      p.top-info {
+      margin: 10px 0;
+      }
+      input, select, textarea {
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      }
+      input {
+      width: calc(100% - 10px);
+      padding: 5px;
+      }
+      select {
+      width: 100%;
+      padding: 7px 0;
+      background: transparent;
+      }
+      textarea {
+      width: calc(100% - 12px);
+      padding: 5px;
+      }
+      .item:hover p, .item:hover i, .question:hover p, .question label:hover, input:hover::placeholder {
+      color: #8ebf42;
+      }
+      .item input:hover, .item select:hover, .item textarea:hover {
+      border: 1px solid transparent;
+      box-shadow: 0 0 8px 0 #8ebf42;
+      color: #8ebf42;
+      }
+      .item {
+      position: relative;
+      margin: 10px 0;
+      }
+      input[type="date"]::-webkit-inner-spin-button {
+      display: none;
+      }
+      .item i, input[type="date"]::-webkit-calendar-picker-indicator {
+      position: absolute;
+      font-size: 20px;
+      color: #a9a9a9;
+      }
+      .item i {
+      right: 2%;
+      top: 30px;
+      z-index: 1;
+      }
+      [type="date"]::-webkit-calendar-picker-indicator {
+      right: 1%;
+      z-index: 2;
+      opacity: 0;
+      cursor: pointer;
+      }
+      input[type=radio] {
+      width: 0;
+      visibility: hidden;
+      }
+      label.radio {
+      position: relative;
+      display: inline-block;
+      margin: 5px 20px 25px 0;
+      cursor: pointer;
+      }
+      .question span {
+      margin-left: 30px;
+      }
+      label.radio:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      border: 2px solid #8ebf42;
+      }
+      label.radio:after {
+      content: "";
+      position: absolute;
+      width: 8px;
+      height: 4px;
+      top: 6px;
+      left: 5px;
+      background: transparent;
+      border: 3px solid #8ebf42;
+      border-top: none;
+      border-right: none;
+      transform: rotate(-45deg);
+      opacity: 0;
+      }
+      input[type=radio]:checked + label:after {
+      opacity: 1;
+      }
+      .btn-block {
+      margin-top: 10px;
+      text-align: center;
+      }
+      button {
+      width: 150px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px; 
+      background: #8ebf42;
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer;
+      }
+      button:hover {
+      background: #82b534;
+      }
+      @media (min-width: 568px) {
+      .name-item, .city-item {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      }
+      .name-item input, .city-item input {
+      width: calc(50% - 20px);
+      }
+      .city-item select {
+      width: calc(50% - 8px);
+      }
+      }
+</style>
+</head>
+
+<body>
+<div id="container">
+<header><h1>Sim's Cake Town</h1></header>
+
+<nav class="left">
+
+<ul>
+<li><a href="../page1/index.html">Home Page</a></li>
+<li><a href="../page2/about.html">About Us</a></li>
+<li><a href="../page3/menu.html">Menu</a></li>
+<li><a href="../page4/adver.html">Advertisement</a></li>
+<li><a href="../page5/videos.html">Videos</a></li>
+<li><a href="form.html">Form</a></li>
+<li><a href="../page7/links.html">Links</a></li>
+<li><a href="../page8/authors.html">Author</a></li>
+<li><a href="../page9/doc.html">Documentation</a></li>
+</ul>
+
+<!--From W3-->
+<p style="padding-left:10px; color:black;">TIME: </p>
+<p id="demo" style="font-family: Arial, Helvetica, sans-serif; color:black;"></p><br>
+
+<script>
+setInterval(myTimer, 1000);
+
+function myTimer() {
+  const d = new Date();
+  document.getElementById("demo").innerHTML = d.toLocaleTimeString();
+}
+</script>
+
+</nav>
+
+<aside>
+	
+	<div class="right">
+	<h3 style="text-align:center;">Promotion</h3>
+	<img src="../pic/buy1free1.png" width="200px" height="200px">
+	
+	<!--From Google Embed Code-->
+	<h3 style="text-align:center;">Our Location</h3>
+	<div class="mapouter"><div class="gmap_canvas"><iframe width="200" height="200" id="gmap_canvas"
+	src="https://maps.google.com/maps?q=Jln%20Kiambang%2014,%20Bandar%20Indahpura,%2081000%20Kulai,%20Johor&t=&z=11&ie=UTF8&iwloc=&output=embed" 
+	frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://putlocker-is.org">putlocker</a><br>
+	<style>.mapouter{position:relative;text-align:right;height:200px;width:200px;}</style><a href="https://www.embedgooglemap.net">google maps embedded</a>
+	<style>.gmap_canvas {overflow:hidden;background:none!important;height:200px;width:200px;}</style></div></div>
+
+	<address style="padding:10px;">
+	Visit us at:<br>
+	Jln Kiambang 14,<br>
+	Bandar Indahpura, <br>
+	81000 Kulai, <br>
+	Johor
+	<br>Business hours:<br>
+	Daily hours 8am to 8pm
+</address>
+	</div>
+</aside>
+
+<main>
+ <div class="testbox">
+      <form action="mailto:B210001A@sc.edu.my" method="POST" enctype="multipart/form-data" name="EmailForm">
+        <div class="banner">
+          <h1>Register Now</h1>
+        </div>
+        <div class="item">
+          <p>Name</p>
+          <div class="name-item">
+            <input type="text" name="First" placeholder="First" required/>
+            <input type="text" name="Last" placeholder="Last" required/>
+          </div>
+        </div>
+		<div class="item">
+          <label for="pwd">Password:</label>
+		  <input type="password" id="pwd" name="pwd" required/>
+        </div>
+        <div class="item">
+          <p>Birth Date</p>
+          <input type="date" name="bdate" required/>
+          <i class="fas fa-calendar-alt"></i>
+        </div>
+        <div class="question">
+          <p>Gender</p>
+          <div class="question-answer">
+            <input type="radio" value="none" id="radio_1" name="gender"/>
+            <label for="radio_1" class="radio"><span>Male</span></label>
+            <input type="radio" value="none" id="radio_2" name="gender"/>
+            <label for="radio_2" class="radio"><span>Female</span></label>
+          </div>
+        </div>
+        <div class="item">
+          <p>Contact Number</p>
+          <input type="text" name="name"required/>
+        </div>
+        <div class="item">
+          <p>Email Address</p>
+          <input type="text" name="name"required/>
+        </div>
+        <div class="item">
+          <p>Address</p>
+          <input type="text" name="name" placeholder="Address Line 1"required/>
+          <input type="text" name="name" placeholder="Address Line 2"/>
+          <div class="city-item">
+            <input type="text" name="name" placeholder="City" required/>
+            <input type="text" name="name" placeholder="State" required/>
+            <input type="text" name="name" placeholder="Postal Code" required/>
+			<input type="text" name="name" placeholder="Country" required/>
+          </div>
+        </div>
+		<br>
+		
+		<input type="checkbox" class="checkbox" id="newsletter" name="newsletter" required/>
+		<label for="newsletter">I have checked all information are correct</label>
+		
+		
+		<div class="btn-block">
+		  <button type="reset" href="/">Reset</button>
+          <button type="submit" href="/">Register</button>
+        </div>
+		</form>
+	</div>
+	<br>
+	
+	<div class="testbox">
+      <form action="mailto:B210001A@sc.edu.my" method="POST" enctype="multipart/form-data" name="EmailForm">
+        <div class="banner">
+          <h1>Order Now</h1>
+        </div>
+        <div class="item">
+          <p>Name</p>
+          <div class="name-item">
+            <input type="text" name="First" placeholder="First" required/>
+            <input type="text" name="Last" placeholder="Last" required/>
+          </div>
+        </div>
+        <div class="item">
+          <p>Contact Number</p>
+          <input type="text" name="name"required/>
+        </div>
+        <div class="item">
+          <p>Delivery Address</p>
+          <input type="text" name="name" placeholder="Address Line 1"required/>
+          <input type="text" name="name" placeholder="Address Line 2"/>
+          <div class="city-item">
+            <input type="text" name="name" placeholder="City" required/>
+            <input type="text" name="name" placeholder="State" required/>
+            <input type="text" name="name" placeholder="Postal Code" required/>
+			<input type="text" name="name" placeholder="Country" required/>
+          </div>
+        </div><br>
+		
+         <div class="item">
+          <p>Order List</p>
+          <div>
+			<select>
+				<option value=""></option>
+				<option value="Hershey Chocolate Cake">Hershey Chocolate Cake</option>
+				<option value="Japanese Strawberry Cake">Japanese Strawberry Cake</option>
+				<option value="Muscat Favourite Grapes Cake">Muscat Favourite Grapes Cake</option>
+				<option value="Banana Cake & Cream Cheese Frosting">Banana Cake &amp; Cream Cheese Frosting</option>
+				<option value="Lychee Cake & Pink Biscuits">Lychee Cake &amp; Pink Biscuits</option>
+				<option value="Cookies & Cream Oreo Cake">Cookies &amp; Cream Oreo Cake</option>
+				<option value="Brown Derby Grapefruit Cake">Brown Derby Grapefruit Cake</option>
+				<option value="Coconut & Cheese Cake">Coconut &amp; Cheese Cake</option>
+				<option value="Pork Floss Cake">Pork Floss Cake</option>
+				<option value="Thick Cheese Cake">Thick Cheese Cake</option>
+				<option value="Peanut & Butter Cake">Peanut &amp; Butter Cake</option>
+				<option value="Lemon & Blueberry Cake">Lemon &amp; Blueberry Cake</option>
+				<option value="Matcha Towel Roll Crepe Cake">Matcha Towel Roll Crepe Cake</option>
+				<option value="Dragon Fruit Raspberry Chocolate Cake">Dragon Fruit Raspberry Chocolate Cake</option>
+				<option value="Wasabi & Chocolate Cake">Wasabi &amp; Chocolate Cake</option>
+				<option value="Pear & Loaf Cake">Pear &amp; Loaf Cake</option>
+				<option value="Chocolate Towel Roll Crepe Cake">Chocolate Towel Roll Crepe Cake</option>
+				<option value="Tiramisu Cake">Tiramisu Cake</option>
+				<option value="Orange & Chocolate Cake">Orange &amp; Chocolate Cake</option>
+				<option value="Durian Crepe Cake">Durian Crepe Cake</option>
+			</select>
+			<input type="number" min="1" name="Select a quantity" placeholder="Select a quantity"/>	
+			<br><br>
+			<select>
+				<option value=""></option>
+				<option value="Hershey Chocolate Cake">Hershey Chocolate Cake</option>
+				<option value="Japanese Strawberry Cake">Japanese Strawberry Cake</option>
+				<option value="Muscat Favourite Grapes Cake">Muscat Favourite Grapes Cake</option>
+				<option value="Banana Cake & Cream Cheese Frosting">Banana Cake &amp; Cream Cheese Frosting</option>
+				<option value="Lychee Cake & Pink Biscuits">Lychee Cake &amp; Pink Biscuits</option>
+				<option value="Cookies & Cream Oreo Cake">Cookies &amp; Cream Oreo Cake</option>
+				<option value="Brown Derby Grapefruit Cake">Brown Derby Grapefruit Cake</option>
+				<option value="Coconut & Cheese Cake">Coconut &amp; Cheese Cake</option>
+				<option value="Pork Floss Cake">Pork Floss Cake</option>
+				<option value="Thick Cheese Cake">Thick Cheese Cake</option>
+				<option value="Peanut & Butter Cake">Peanut &amp; Butter Cake</option>
+				<option value="Lemon & Blueberry Cake">Lemon &amp; Blueberry Cake</option>
+				<option value="Matcha Towel Roll Crepe Cake">Matcha Towel Roll Crepe Cake</option>
+				<option value="Dragon Fruit Raspberry Chocolate Cake">Dragon Fruit Raspberry Chocolate Cake</option>
+				<option value="Wasabi & Chocolate Cake">Wasabi &amp; Chocolate Cake</option>
+				<option value="Pear & Loaf Cake">Pear &amp; Loaf Cake</option>
+				<option value="Chocolate Towel Roll Crepe Cake">Chocolate Towel Roll Crepe Cake</option>
+				<option value="Tiramisu Cake">Tiramisu Cake</option>
+				<option value="Orange & Chocolate Cake">Orange &amp; Chocolate Cake</option>
+				<option value="Durian Crepe Cake">Durian Crepe Cake</option>
+			</select>
+			<input type="number" min="1" name="Select a quantity" placeholder="Select a quantity"/>
+			<br><br>
+			<select>
+				<option value=""></option>
+				<option value="Hershey Chocolate Cake">Hershey Chocolate Cake</option>
+				<option value="Japanese Strawberry Cake">Japanese Strawberry Cake</option>
+				<option value="Muscat Favourite Grapes Cake">Muscat Favourite Grapes Cake</option>
+				<option value="Banana Cake & Cream Cheese Frosting">Banana Cake &amp; Cream Cheese Frosting</option>
+				<option value="Lychee Cake & Pink Biscuits">Lychee Cake &amp; Pink Biscuits</option>
+				<option value="Cookies & Cream Oreo Cake">Cookies &amp; Cream Oreo Cake</option>
+				<option value="Brown Derby Grapefruit Cake">Brown Derby Grapefruit Cake</option>
+				<option value="Coconut & Cheese Cake">Coconut &amp; Cheese Cake</option>
+				<option value="Pork Floss Cake">Pork Floss Cake</option>
+				<option value="Thick Cheese Cake">Thick Cheese Cake</option>
+				<option value="Peanut & Butter Cake">Peanut &amp; Butter Cake</option>
+				<option value="Lemon & Blueberry Cake">Lemon &amp; Blueberry Cake</option>
+				<option value="Matcha Towel Roll Crepe Cake">Matcha Towel Roll Crepe Cake</option>
+				<option value="Dragon Fruit Raspberry Chocolate Cake">Dragon Fruit Raspberry Chocolate Cake</option>
+				<option value="Wasabi & Chocolate Cake">Wasabi &amp; Chocolate Cake</option>
+				<option value="Pear & Loaf Cake">Pear &amp; Loaf Cake</option>
+				<option value="Chocolate Towel Roll Crepe Cake">Chocolate Towel Roll Crepe Cake</option>
+				<option value="Tiramisu Cake">Tiramisu Cake</option>
+				<option value="Orange & Chocolate Cake">Orange &amp; Chocolate Cake</option>
+				<option value="Durian Crepe Cake">Durian Crepe Cake</option>
+			</select>
+			<input type="number" min="1" name="Select a quantity" placeholder="Select a quantity"/>				
+          </div>
+        </div><br>
+		
+		<div class="btn-block">
+		  <button type="reset" href="/">Reset</button>
+          <button type="submit" href="/">Submit Order</button>
+        </div>
+		</form>
+	</div><br>
+
+ <div class="testbox">
+      <form action="mailto:B210001A@sc.edu.my" method="POST" enctype="multipart/form-data" name="EmailForm">
+        <div class="banner">
+          <h1>Feedback</h1>
+        </div><br>
+		<p><b>Thank you for taking the time to fill in our online feedback form. By providing us your feedback, you are helping us understand what we do well and what improvements we need to implement.</b></p><br>
+		
+		<h4>Feel free to add any other comments or suggestions:</h4>
+			<textarea rows="5"></textarea>
+			<small>* The information given within the Feedback Form will be used for service improvement only and are strictly confidential.</small>
+		<br><br>
+		
+		<div class="btn-block">
+		  <button type="reset" href="/">Reset</button>
+          <button type="submit" href="/">Submit Feedback</button>
+        </div>
+		</form>
+	</div><br>
+	
+	<div class="testbox">
+      <form>
+        <div class="banner">
+          <h1>Site’s Privacy Policy</h1>
+        </div>
+		<dl>
+		<dt><p><b>Kindly click on attached file link to download our Site’s Privacy Policy document.</b></p></dt><br>
+		<dt><a class="link" style="text-decoration:none;" href="privacypolicy.pdf"><b>Sim's Cake Town Privacy Policy</b></a></dt><br>
+		</dl>
+      
+        </div>
+		<br>
+		</form>
+		<a href="#container" style="text-decoration:none;"><h2 style="padding:15px;"><I><B>Back To The Top&nbsp;&#10084;</I></B></h2></a>
+	&nbsp;
+	<br>
+	 
+	
+<footer>
+	<p>Copyright &copy 2022 The Sim Group Project Teams. All right reserved.
+	<br>
+	All text, ideas and graphics found at this site are copyrighted by the author and <br> may not used for any purpose other than those specified or allowed by 
+	the author.
+	<br><br>
+	This website was designed by The Sim Group Project Teams.
+	</p>
+</footer>
+</main>
+
+</div> 
+</body>
+</html>
